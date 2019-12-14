@@ -7,6 +7,7 @@ Membros do grupo : [Lembrar de inserir depois]
 
 Linguagem utilizada: Python 3
 GUI feita utilizando tkinter.
+um "mapa" das janelas está incluso nos arquivos.
 
 Funcionamento do programa:
 Criamos uma função para cada janela no tk, e fizemos uma lista contendo todos esses objetos de função.
