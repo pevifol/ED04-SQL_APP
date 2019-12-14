@@ -6,12 +6,33 @@ Membros do grupo : [Lembrar de inserir depois]
 5 - 
 
 Linguagem utilizada: Python 3
+GUI feita utilizando tkinter.
 
 Funcionamento do programa:
 Criamos uma função para cada janela no tk, e fizemos uma lista contendo todos esses objetos de função.
 Iteramos então, indefinidamente, de forma que ao clicar em um botão para trocar de janela, um variável global chamada
 "State" é alterada para o valor de index na lista das "janelas", e a janela atual é fechada. O programa então, loopa
 abrindo a proxima "janela" de index "State". 
+
+Detalhes que vale a pena comentar:
+
+Mapa:
+Enquanto certamente um mapa de 2000x2000 seja, funcionalmente, legal, ele tem um problema gravíssimo: há poucos monitores com 
+resolução o suficiente para mostrar essa imagem (incluindo todos os integrantes do grupo). Havia, então, 2 soluções:
+1) Dividir a imagem em quadrantes: 4 imagens de 500x500, e colocar botões pra "trocar" a imagem. Isso daria certo, mas teriamos
+que tomar mais espaço das janelas com botões, o que zuava tanto o layout, quanto o programa em sí.
+2) Trocar para uma imagem de 1200x600, que tem uma resolução melhor pra monitor (que tendem a ser retangulares). Essa foi a opção
+escolhida, e é bem funcional. 
+
+Logger:
+Incluido no trabalho há um arquivo .py de logger. No final, acabamos não incluindo nenhum uso pra ele, mas ele, originalmente,
+servíria para capturar as exceções do programa (except Exception as msg: -> logging(msg+str(locals()) ). A questão é que esses 
+erros provavelmente nunca seriam resolvidos (não há planos para um v2 desse aplicativo), e que a maioria deles só ocorrerão em 
+situações tão bizarras que é difícil prever eles (e preventivamente remover). Então, ele fica como um "bonus".
+
+Inserção no banco de dados:
+Na hora de inserir para o banco de dados, tomamos cuidado para que toda loja esteja dentro do mapa (usamos um %1200 para a
+distância x, e um 600% para a distância y). Isso deve evitar problemas com a imagem. 
 
 Sobre o banco de dados em si:
 Utilizamos MySQL 5.7.
