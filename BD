@@ -1,0 +1,51 @@
+Lojas 
+Nome | Endereço | Telefone | posição x | posição y | categoria | lojaid 
+
+CREATE TABLE IF NOT EXISTS 'banco'.'lojas'(
+'nome' VARCHAR(25) NOT NULL,
+'endereço' VARCHAR(50) NOT NULL,
+'telefone' VARCHAR(23) NOT NULL,
+'posx' INT(4) UNSIGNED,
+'posy' INT(4) UNSIGNED,
+'categoria' VARCHAR(12) NOT NULL,
+'lojaid' INT(8) UNSIGNED NOT NULL,
+'produtos' INT(16) UNSIGNED NOT NULL,   
+PRIMARY KEY ('lojaid');
+
+
+Produtos
+Nome | Categoria | descrição | foto (path/link) | lojaid (loja onde o produto está) | valor | quantidade
+
+CREATE TABLE IF NOT EXIST 'banco'.'produtos'(
+'nome' VARCHAR(30) NOT NULL,
+'categoria' VARCHAR(12) NOT NULL,
+'descrição' VARCHAR(50) NOT NULL,
+'foto' VARCHAR(20) NOT NULL,
+'prodid' INT(8) UNSIGNED NOT NULL,
+'lojaid' INT(16) UNSIGNED NOT NULL,
+'valor' FLOAT(12) UNSIGEND NOT NULL,
+'quantidade' INT(5) NOT NULL,
+PRIMARY KEY ('lojaid');
+
+Clientes
+Nome | data de nascimento | sexo | CPF | Telefone 1 | Telefone 2 | Email
+
+CREATE TABLE IF NOT EXIST 'banco'.'clientes'(
+'nome' VARCHAR(20) NOT NULL,
+'datadenascimento' TIMESTAMP
+'sexo' ENUM['homem','mulher','outro'],
+'CPF' INT(11) UNSIGNED,
+'TELEFONE' VARCHAR(23),
+'email' VARCHAR(50),
+PRIMARY KEY ('nome');
+
+Compras
+Loja | Cliente | Produto | Quantidade  
+CREATE TABLE IF NOT EXIST 'banco'.'compras'(
+'loja' INT(8) UNSIGNED NOT NULL,
+'cliente' INT(11) UNSIGNED,
+'produto' INT(8) UNSIGED NOT NULL,
+'quantidade' INT(5) UNSIGNED NOT NULL,
+PRIMARY KEY('loja');
+
+
