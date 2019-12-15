@@ -13,7 +13,8 @@ Funcionamento do programa:
 Criamos uma função para cada janela no tk, e fizemos uma lista contendo todos esses objetos de função.
 Iteramos então, indefinidamente, de forma que ao clicar em um botão para trocar de janela, um variável global chamada
 "State" é alterada para o valor de index na lista das "janelas", e a janela atual é fechada. O programa então, loopa
-abrindo a proxima "janela" de index "State". 
+abrindo a proxima "janela" de index "State". A interação programa-mysql é feita utilizando a função "cursor" que recebe o código
+em sql para as tarefas, e retorna o resultado. 
 
 Detalhes que vale a pena comentar:
 
