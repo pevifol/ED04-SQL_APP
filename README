@@ -40,6 +40,5 @@ distância x, e um 600% para a distância y). Isso deve evitar problemas com a i
 
 Sobre o banco de dados em si:
 Utilizamos MySQL 5.7.
-Durante a semana logo depois da entrega ( do dia 13 ao dia 20 de dezembro), o banco de dado ficará hosteado no ip: 
-35.247.224.160, com possível login e senha de "ademir" , "ademir" com permissões de administrador.
+
 	
